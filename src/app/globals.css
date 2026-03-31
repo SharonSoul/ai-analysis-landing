@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --color-myskin-slate: #354B59;
+  --color-myskin-bg: #F8F9FA;
+  --color-myskin-glass: rgba(255, 255, 255, 0.4);
+  
+  --font-editorial: "Inter", system-ui, sans-serif;
+
+  --shadow-glass: 0 8px 30px rgba(0, 0, 0, 0.04);
+  
+  --animate-laser: laser-ping 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-reveal: reveal-up 0.8s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes laser-ping {
+    0%, 100% { transform: translateY(-10%); opacity: 0.5; }
+    50% { transform: translateY(110%); opacity: 1; }
+  }
+
+  @keyframes reveal-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+:root {
+  --background: #F8F9FA;
+  --foreground: #354B59;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-editorial);
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/40 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-black/10 backdrop-blur-md border border-white/10;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .liquid-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .liquid-scroll-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
