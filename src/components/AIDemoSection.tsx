@@ -20,29 +20,32 @@ const AIDemoSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center gap-16">
+    <section className="min-h-[90vh] py-24 bg-white relative overflow-hidden flex items-center">
+      {/* Decorative Background Element */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-myskin-bg/50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center gap-16 relative z-10 w-full">
         {/* Left Side: Text Description */}
-        <div className="md:w-1/2 space-y-6">
+        <div className="md:w-1/2 space-y-6 md:space-y-8">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold text-myskin-slate"
+            className="text-4xl md:text-6xl font-extrabold text-myskin-slate tracking-tight leading-tight"
           >
-            AI-Powered <br />Precision Analysis
+            Your Face is a Map. <br />Let&apos;s Read It with 468 Points of Precision.
           </motion.h2>
-          <p className="text-xl text-myskin-slate/60 leading-relaxed max-w-lg">
-            Our proprietary scanning technology identifies subsurface skin conditions that the human eye might miss. Instantly detect dehydration, sun damage, and early signs of aging.
+          <p className="text-lg md:text-xl text-myskin-slate/60 leading-relaxed max-w-lg">
+            Stop guessing and start knowing. MySkin&apos;s DermFoundation AI Engine uses advanced facial landmarking to map your skin&apos;s unique topography. By analyzing 468 individual points on your face, our technology detects subtle changes in texture, hydration, and barrier health that the human eye might miss.
           </p>
           
-          <div className="grid grid-cols-2 gap-8 pt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 pt-8 border-t border-myskin-slate/5">
             <div className="space-y-2">
-              <h4 className="text-sm font-bold uppercase tracking-widest text-myskin-slate/40">Clinical Grade</h4>
-              <p className="text-lg font-medium">Laboratory standard accuracy in your pocket.</p>
+              <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-myskin-slate/40">Deep Texture Analysis</h4>
+              <p className="text-base md:text-lg font-bold text-myskin-slate/80 leading-snug">Identifies fine lines, pore congestion, and surface irregularities.</p>
             </div>
             <div className="space-y-2">
-              <h4 className="text-sm font-bold uppercase tracking-widest text-myskin-slate/40">Real-time</h4>
-              <p className="text-lg font-medium">Instant results powered by neural edge processing.</p>
+              <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-myskin-slate/40">AI-Powered Scoring</h4>
+              <p className="text-base md:text-lg font-bold text-myskin-slate/80 leading-snug">Receive a comprehensive skin health score based on clinical dermatological standards.</p>
             </div>
           </div>
         </div>
@@ -52,9 +55,9 @@ const AIDemoSection = () => {
           <div className="relative w-full h-full rounded-2xl overflow-hidden group">
             {/* Base Image */}
             <img 
-              src="https://images.unsplash.com/photo-1542453580-0d33e5c7075c?auto=format&fit=crop&q=80&w=1000" 
+              src="/skin-scan.png" 
               alt="Skin Analysis"
-              className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
+              className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
             />
             
             {/* Scan Beam */}

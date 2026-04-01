@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Activity, Clipboard, ShieldAlert, Award } from 'lucide-react';
 
@@ -28,27 +28,36 @@ const ResultsReveal = () => {
     show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } as any }
   };
 
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <section className="py-32 bg-white relative">
-      <div className="max-w-7xl mx-auto px-8 flex flex-col items-center">
-        <div className="w-full max-w-4xl glass rounded-[40px] p-12 relative shadow-2xl shadow-black/5 overflow-hidden">
+    <section className="min-h-[90vh] py-32 bg-white relative flex items-center">
+      {/* Immersive Depth Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--color-myskin-bg)_0%,transparent_60%)] pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto px-8 flex flex-col items-center w-full relative z-10">
+        <div className="w-full max-w-5xl glass rounded-[60px] p-8 md:p-16 relative shadow-2xl shadow-black/[0.03] overflow-hidden border border-white/40">
           {/* Clinical Header */}
-          <div className="flex items-center justify-between border-b border-myskin-slate/10 pb-10 mb-10">
-            <div className="flex items-center gap-6">
-              <div className="w-16 h-16 rounded-2xl bg-myskin-slate flex items-center justify-center text-white">
-                <Clipboard className="w-8 h-8" />
+          <div className="flex flex-col md:flex-row items-center justify-between border-b border-myskin-slate/5 pb-12 mb-12 gap-8 text-center md:text-left">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="w-20 h-20 rounded-3xl bg-myskin-slate flex items-center justify-center text-white shadow-xl">
+                <Clipboard className="w-10 h-10" />
               </div>
-              <div className="space-y-1">
-                <h2 className="text-3xl font-bold text-myskin-slate">Personalized Skin Report</h2>
-                <p className="text-sm font-medium text-myskin-slate/40 flex items-center gap-2">
+              <div className="space-y-2">
+                <h2 className="text-3xl md:text-4xl font-black text-myskin-slate tracking-tight">Personalized Skin Report</h2>
+                <p className="text-xs font-black text-myskin-slate/30 flex items-center justify-center md:justify-start gap-2 uppercase tracking-widest">
                   <Activity className="w-4 h-4" /> 
                   Analysis ID: MS-77492-X
                 </p>
               </div>
             </div>
-            <div className="hidden md:flex flex-col items-end gap-1">
-              <div className="px-4 py-1.5 rounded-full bg-green-50 text-green-600 text-[10px] font-bold uppercase tracking-widest">Verified Result</div>
-              <p className="text-[10px] text-myskin-slate/30 font-bold uppercase">Issued on: {new Date().toLocaleDateString()}</p>
+            <div className="flex flex-col items-center md:items-end gap-2">
+              <div className="px-5 py-2 rounded-full bg-green-50 text-green-600 text-[10px] font-black uppercase tracking-[0.2em] shadow-sm border border-green-100/50">Verified Result</div>
+              <p className="text-[10px] text-myskin-slate/30 font-bold uppercase tracking-widest mt-1">Issued on: {mounted ? new Date().toLocaleDateString() : "..."}</p>
             </div>
           </div>
 
@@ -58,25 +67,22 @@ const ResultsReveal = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid gap-6"
+            className="grid md:grid-cols-2 gap-8"
           >
             {reportData.map((data) => (
               <motion.div 
                 key={data.label}
                 variants={item}
-                className="flex items-center justify-between p-6 rounded-2xl border border-myskin-slate/5 hover:border-myskin-slate/15 transition-colors group"
+                className="flex items-center justify-between p-8 rounded-3xl bg-myskin-bg/30 border border-white/20 hover:border-myskin-slate/15 transition-all group hover:scale-[1.02]"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-2 h-2 rounded-full bg-myskin-slate opacity-20 group-hover:opacity-100 transition-opacity" />
-                  <span className="text-lg font-medium text-myskin-slate/60">{data.label}</span>
+                  <span className="text-xl font-bold text-myskin-slate/60">{data.label}</span>
                 </div>
-                <div className="flex items-center gap-12">
+                <div className="flex items-center gap-8">
                   <div className="flex flex-col items-end">
-                    <span className="text-xl font-bold text-myskin-slate">{data.value}</span>
-                    <span className="text-[10px] font-bold text-green-500/80">{data.trend}</span>
-                  </div>
-                  <div className="w-24 text-right">
-                    <span className="text-sm font-bold text-myskin-slate/40 group-hover:text-myskin-slate transition-colors">{data.status}</span>
+                    <span className="text-2xl font-black text-myskin-slate">{data.value}</span>
+                    <span className="text-xs font-black text-green-500/80 uppercase tracking-widest">{data.trend}</span>
                   </div>
                 </div>
               </motion.div>
@@ -84,31 +90,47 @@ const ResultsReveal = () => {
           </motion.div>
 
           {/* Clinical Seals */}
-          <div className="mt-16 flex items-center justify-center gap-10 opacity-20 hover:opacity-40 transition-opacity duration-700">
-            <div className="flex items-center gap-2">
-              <ShieldAlert className="w-5 h-5" />
-              <span className="text-[10px] font-bold uppercase tracking-widest italic">FDA Grade AI</span>
+          <div className="mt-16 flex flex-wrap items-center justify-center gap-12 opacity-30">
+            <div className="flex items-center gap-3">
+              <ShieldAlert className="w-6 h-6" />
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] italic">FDA Grade AI</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Award className="w-5 h-5" />
-              <span className="text-[10px] font-bold uppercase tracking-widest italic">Clinically Tested</span>
+            <div className="flex items-center gap-3">
+              <Award className="w-6 h-6" />
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] italic">Clinically Tested</span>
             </div>
           </div>
-
-          {/* Decorative Corner */}
-          <div className="absolute -top-10 -right-10 w-40 h-40 bg-myskin-slate/5 translate-x-12 -translate-y-12 rotate-45 pointer-events-none" />
         </div>
         
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="mt-16 text-center space-y-6"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="mt-16 md:mt-20 text-center space-y-12 w-full max-w-5xl"
         >
-          <p className="text-myskin-slate/60 max-w-lg leading-relaxed">
-            Download your comprehensive 18-page dermatological breakdown and start your 7-day science-first transformation today.
-          </p>
-          <button className="px-12 py-5 rounded-2xl bg-myskin-slate text-white font-bold shadow-2xl shadow-myskin-slate/30 border border-white/10 hover:scale-105 active:scale-95 transition-all text-lg">
+          <div className="space-y-6 px-4">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-myskin-slate tracking-tight leading-tight">
+              Watch Your Progress Evolve with Aggregated Intelligence.
+            </h2>
+            <p className="text-lg md:text-xl text-myskin-slate/60 max-w-2xl mx-auto leading-relaxed font-medium">
+              Beauty isn&apos;t an overnight fix; it&apos;s a journey. MySkin aggregates your scan history and journal entries into insightful Growth Trends. See your skin health score climb as you refine your routines, and watch how your customized Barrier Repair Plan transforms your complexion over time. Data doesn&apos;t lie; it empowers.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12 pt-8">
+            {[
+              { label: "Aggregated Scoring Trends", desc: "Visual progress charts showing improvement over weeks." },
+              { label: "Personalized Insights", desc: "Alerts for skin stress before a breakout occurs." },
+              { label: "Community Validation", desc: "Share success stories in our skin-first community." }
+            ].map((feature, idx) => (
+              <div key={idx} className="space-y-4 p-6 md:p-8 rounded-[28px] md:rounded-[32px] bg-[#F8F9FA]/50 border border-myskin-slate/5 text-left md:text-center">
+                <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-myskin-slate/40">{feature.label}</h4>
+                <p className="text-base font-bold text-myskin-slate/70 leading-snug">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <button className="w-full sm:w-auto px-12 md:px-16 py-5 md:py-6 rounded-2xl md:rounded-3xl bg-myskin-slate text-white font-black uppercase tracking-widest shadow-2xl shadow-myskin-slate/30 border border-white/10 hover:scale-[1.05] active:scale-95 transition-all text-xs md:text-sm mt-8 md:mt-12">
             View My Full Report
           </button>
         </motion.div>

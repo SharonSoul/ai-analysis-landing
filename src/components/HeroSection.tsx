@@ -22,23 +22,38 @@ const HeroSection = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Video autoplay failed:", error);
+      });
+    }
+  }, []);
+
   const sphereX = useSpring(mousePosition.x * 20 - 10, { stiffness: 50, damping: 20 });
   const sphereY = useSpring(mousePosition.y * 20 - 10, { stiffness: 50, damping: 20 });
 
   return (
     <section ref={containerRef} className="relative h-screen w-screen overflow-hidden flex items-center bg-white">
       {/* Immersive Video Background - Full Width/Height */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden bg-white">
         <video 
-          autoPlay 
+          ref={videoRef}
           muted 
           loop 
           playsInline
+          preload="auto"
+          controlsList="nodownload"
+          disablePictureInPicture
+          onContextMenu={(e) => e.preventDefault()}
           className="w-full h-full object-cover"
         >
           <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
-        {/* No color overlay, just pure video immersion */}
+        {/* Subtle light overlay instead of dark */}
+        <div className="absolute inset-0 bg-white/5 z-10" />
       </div>
 
       {/* Floating Purity Elements - Subtly added for 'Pristine' feel */}
@@ -103,7 +118,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Side: Sophisticated Stats */}
-          <div className="flex flex-col gap-10 md:gap-14">
+          <div className="flex flex-col gap-8 md:gap-14 w-full md:w-auto">
             {[
               { icon: <ShieldCheck />, val: "95%", lab: "accurate skin analysis" },
               { icon: <Zap />, val: "30+", lab: "skin concerns analyzed" },
@@ -111,21 +126,21 @@ const HeroSection = () => {
             ].map((stat, idx) => (
               <motion.div 
                 key={idx}
-                className="flex items-center gap-6"
+                className="flex items-center gap-4 md:gap-6"
                 initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ 
-                  delay: 1.3 + idx * 0.4, // Slower sequence starting after left side
-                  duration: 1.8, // Slower slide in
+                  delay: 1.3 + idx * 0.4,
+                  duration: 1.8,
                   ease: [0.22, 1, 0.36, 1] 
                 }}
               >
-                <div className="w-14 h-14 rounded-2xl glass flex items-center justify-center text-myskin-slate shadow-2xl">
-                  {React.cloneElement(stat.icon as React.ReactElement<any>, { className: "w-6 h-6" })}
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl glass flex items-center justify-center text-myskin-slate shadow-xl md:shadow-2xl flex-shrink-0">
+                  {React.cloneElement(stat.icon as React.ReactElement<any>, { className: "w-5 h-5 md:w-6 md:h-6" })}
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-4xl md:text-5xl font-black text-myskin-slate leading-none tracking-tighter">{stat.val}</span>
-                  <p className="text-[10px] font-bold text-myskin-slate/40 uppercase tracking-widest mt-2">{stat.lab}</p>
+                  <span className="text-3xl md:text-5xl font-black text-myskin-slate leading-none tracking-tighter">{stat.val}</span>
+                  <p className="text-[9px] md:text-[10px] font-bold text-myskin-slate/40 uppercase tracking-widest mt-1 md:mt-2">{stat.lab}</p>
                 </div>
               </motion.div>
             ))}

@@ -1,9 +1,12 @@
 import React from 'react';
 import HeroSection from '@/components/HeroSection';
 import AIDemoSection from '@/components/AIDemoSection';
-import FeatureGrid from '@/components/FeatureGrid';
+import SkinJournal from '@/components/SkinJournal';
+import AIAdvisor from '@/components/AIAdvisor';
 import ResultsReveal from '@/components/ResultsReveal';
-import { DownloadSection, Footer } from '@/components/Footer';
+import MobileAppSection from '@/components/MobileAppSection';
+import WaitlistSection from '@/components/WaitlistSection';
+import { Footer } from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
 
 export default function Home() {
@@ -12,24 +15,34 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* AI Demo Section */}
+      {/* AI Demo Section - Section 1 */}
       <ScrollReveal>
         <AIDemoSection />
       </ScrollReveal>
 
-      {/* Feature Grid */}
+      {/* Skin Journal - Section 2 */}
       <ScrollReveal>
-        <FeatureGrid />
+        <SkinJournal />
       </ScrollReveal>
 
-      {/* Results Reveal */}
+      {/* AI Advisor - Section 3 */}
+      <ScrollReveal>
+        <AIAdvisor />
+      </ScrollReveal>
+
+      {/* Results Reveal - Section 5 */}
       <ScrollReveal>
         <ResultsReveal />
       </ScrollReveal>
 
-      {/* Download Section */}
+      {/* Mobile App Section - Section 4 */}
       <ScrollReveal>
-        <DownloadSection />
+        <MobileAppSection />
+      </ScrollReveal>
+
+      {/* Waitlist Section - Section 6 */}
+      <ScrollReveal>
+        <WaitlistSection />
       </ScrollReveal>
 
       {/* Footer */}
