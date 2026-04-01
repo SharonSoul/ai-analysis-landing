@@ -1,5 +1,6 @@
 "use client";
 
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle2 } from 'lucide-react';
@@ -20,7 +21,7 @@ const WaitlistSection = () => {
     <section id="waitlist" className="min-h-[90vh] py-24 md:py-32 bg-white relative overflow-hidden flex items-center">
       {/* Atmospheric Background Element */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-myskin-bg/30 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-6 md:px-8 w-full relative z-10">
         <div className="glass rounded-[40px] md:rounded-[80px] p-10 md:p-24 relative shadow-2xl shadow-black/5 overflow-hidden border border-white/60">
           <div className="max-w-3xl mx-auto text-center space-y-10 md:space-y-12 relative z-10">
@@ -32,7 +33,7 @@ const WaitlistSection = () => {
             >
               Early Access Phase
             </motion.div>
-            
+
             <div className="space-y-6">
               <h2 className="text-4xl md:text-7xl font-extrabold text-myskin-slate leading-[1.1] tracking-tight">
                 The Future of Skincare is Personal. <br className="hidden md:block" />Be the First to Enter.
