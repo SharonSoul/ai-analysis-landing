@@ -17,6 +17,7 @@ const WaitlistSection = () => {
     }
   };
 
+
   return (
     <section id="waitlist" className="min-h-[90vh] py-24 md:py-32 bg-white relative overflow-hidden flex items-center">
       {/* Atmospheric Background Element */}
