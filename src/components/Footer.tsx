@@ -42,7 +42,7 @@ export const Footer = () => {
             MySkin<span className="font-light">AI</span>
           </div>
           <p className="text-myskin-slate/50 text-sm max-w-xs leading-relaxed">
-            The highest-rated skin intelligence platform, optimized for your life on the move.
+            Expert-level skin intelligence, optimized for your life on the move.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             {[

@@ -23,10 +23,10 @@ const MobileAppSection = () => {
               Pristine Mobile Experience
             </div>
             <h2 className="text-4xl md:text-7xl font-extrabold leading-[1.05] tracking-tight">
-              Your Skin&apos;s Best Friend, <br />Always Within Reach.
+              Your skin speaks, we listen.
             </h2>
             <p className="text-white/60 text-lg md:text-2xl leading-relaxed font-light max-w-xl mx-auto md:mx-0">
-              Take the power of MySkin with you wherever you go. Our mobile application is designed for seamless daily interaction, providing real-time skin alerts, routine reminders, and instant scan results. It&apos;s the highest-rated skin intelligence platform, optimized for your life on the move.
+              Take the power of MySkin with you wherever you go. Our mobile application is designed for seamless daily interaction, providing real-time skin alerts, routine reminders, and instant scan results. Expert-level skin intelligence, optimized for your life on the move.
             </p>
           </motion.div>
           

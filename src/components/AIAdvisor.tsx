@@ -13,7 +13,7 @@ const AIAdvisor = () => {
     },
     {
       title: "Custom Product Swaps",
-      description: "Get recommendations for high-performance drugstore alternatives that actually work.",
+      description: "Get recommendations for high-performance alternatives that actually work.",
       icon: <RefreshCcw className="w-6 h-6" />,
     },
     {

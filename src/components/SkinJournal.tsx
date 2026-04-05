@@ -18,7 +18,7 @@ const SkinJournal = () => {
     },
     {
       title: "Multi-Step Routine Tracking",
-      description: "Easily log your AM and PM products to see which combinations truly work.",
+      description: "Easily log your AM and PM products to see which combinations are working with or against each other.",
       icon: <ClipboardList className="w-6 h-6" />,
     }
   ];

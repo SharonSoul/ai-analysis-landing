@@ -32,7 +32,7 @@ Your skin responds to everything—the weather, the UV index, what you eat, and 
 ### Key Features (Sub-points)
 *   **Dynamic UV & Weather Integration:** Automatically logs your local UV index and humidity to adjust your daily advice.
 *   **Supplement & Nutrition Sync:** Track how your internal health reflects on your external glow.
-*   **Multi-Step Routine Tracking:** Easily log your AM and PM products to see which combinations truly work.
+*   **Multi-Step Routine Tracking:** Easily log your AM and PM products to see which combinations are working with or against each other.
 
 ---
 
@@ -47,7 +47,7 @@ Are your products working against each other? Our **AI Advisor** performs a 360-
 
 ### Key Features (Sub-points)
 *   **Ingredient Conflict Scanner:** Instantly find what's cancelling each other out or causing irritation.
-*   **Custom Product Swaps:** Get recommendations for high-performance drugstore alternatives that actually work.
+*   **Custom Product Swaps:** Get recommendations for high-performance alternatives that actually work.
 *   **Full Skin Audit:** A root-cause analysis of your primary skin concerns with a personalized roadmap to recovery.
 
 ---
@@ -56,10 +56,10 @@ Are your products working against each other? Our **AI Advisor** performs a 360-
 **Focus:** Phone model visualization and Store CTAs.
 
 ### Headline
-#### Your Skin’s Best Friend, Always Within Reach.
+#### Your skin speaks, we listen.
 
 ### Body Text
-Take the power of MySkin with you wherever you go. Our mobile application is designed for seamless daily interaction, providing real-time skin alerts, routine reminders, and instant scan results. It’s the highest-rated skin intelligence platform, optimized for your life on the move.
+Take the power of MySkin with you wherever you go. Our mobile application is designed for seamless daily interaction, providing real-time skin alerts, routine reminders, and instant scan results. Expert-level skin intelligence, optimized for your life on the move.
 
 ### CTA Section (Visual/Text)
 *   **[Phone Model Illustration Placeholder]**
@@ -76,12 +76,17 @@ Take the power of MySkin with you wherever you go. Our mobile application is des
 #### Watch Your Progress Evolve with Aggregated Intelligence.
 
 ### Body Text
-Beauty isn't an overnight fix—it's a journey. MySkin aggregates your scan history and journal entries into insightful **Growth Trends**. See your skin health score climb as you refine your routines, and watch how your customized Barrier Repair Plan transforms your complexion over time. Data doesn't lie; it empowers.
+Beauty isn't an overnight fix—it's a journey. MySkin breaks down your skin data and daily entries into insightful health and growth trends. See your skin health score climb as you refine your routines, and watch how your customized Barrier Repair Plan transforms your complexion over time. Data doesn't lie; it empowers.
 
 ### Key Features (Sub-points)
 *   **Aggregated Scoring Trends:** Visual progress charts showing texture and hydration improvements over weeks.
 *   **Personalized Insights:** Receive notifications when your skin shows signs of stress before a breakout occurs.
-*   **Community Validation:** Share your success and learn from real stories in our supportive skin-first community.
+*   **Community Validation:** Connect with people who share your skin type and share notes.
+
+### Clinical Seals (Visual)
+*   **MEDICAL Grade AI**
+*   **Clinically Tested**
+
 
 ---
 
