@@ -65,6 +65,7 @@ const MobileAppSection = () => {
               fill
               className="object-cover"
               quality={90}
+              unoptimized
               priority
             />
           </div>
