@@ -1,3 +1,8 @@
+"use client";
+
+import React from 'react';
+import Image from 'next/image';
+
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
     <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.47V18c0 1.32-.43 2.61-1.23 3.65-1.16 1.51-2.97 2.38-4.81 2.34-1.84.04-3.65-.83-4.81-2.34-1.23-1.6-1.55-3.8-.81-5.63.74-1.83 2.58-3.08 4.54-3.08.38 0 .77.04 1.14.13V15.11c-.37-.09-.75-.13-1.14-.13-1.4 0-2.61.9-3.07 2.15-.46 1.25-.23 2.68.57 3.7.79 1.02 2.05 1.54 3.32 1.51 1.27.03 2.53-.49 3.32-1.51.54-.7.83-1.56.83-2.43V4.31c-1.44.87-2.89 1.3-4.33 1.47v-4.03l.44.25c.31-.2.53-.52.6-.88.07-.36.01-.73-.17-1.05-.18-.32-.48-.54-.84-.61-.36-.07-.73-.01-1.05.17-.32.18-.54.48-.61.84-.07.36-.01.73.17 1.05.18.32.48.54.84.61s.73.01 1.05-.17l-.14-.25z" />
@@ -39,7 +44,7 @@ export const Footer = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
         <div className="col-span-2 space-y-6 md:space-y-8">
           <div>
-            <img src="/myskinLogo.png" alt="MySkin" className="h-8 md:h-10 w-auto" />
+            <Image src="/myskinLogo.png" alt="MySkin" width={120} height={40} className="h-8 md:h-10 w-auto" priority />
           </div>
           <p className="text-myskin-slate/50 text-sm max-w-xs leading-relaxed">
             Expert-level skin intelligence, optimized for your life on the move.
