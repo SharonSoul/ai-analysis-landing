@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Apple, Play } from 'lucide-react';
 
@@ -58,13 +59,14 @@ const MobileAppSection = () => {
           {/* Phone Model Visualization Placeholder Styling */}
           <div className="relative w-72 h-[600px] bg-[#1a1a1a] rounded-[3rem] border-[8px] border-white/10 shadow-2xl overflow-hidden">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-white/10 rounded-b-3xl z-20" />
-            <div className="absolute inset-0 w-full h-full">
-              <img 
-                src="/myskin-mod.png" 
-                alt="MySkin App Interface"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <Image 
+              src="/myskin-mod.png" 
+              alt="MySkin App Interface"
+              fill
+              className="object-cover"
+              quality={90}
+              priority
+            />
           </div>
           {/* Aura background for phone */}
           <div className="absolute inset-0 bg-white/5 blur-[100px] rounded-full -z-10" />
