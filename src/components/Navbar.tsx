@@ -13,8 +13,8 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-24 lg:px-40 py-6 md:py-8 w-full bg-transparent"
     >
       <div className="flex items-center gap-2">
-        <Link href="/" className="text-xl md:text-2xl font-black tracking-tighter text-myskin-slate">
-          MySkin<span className="font-light italic opacity-60">AI</span>
+        <Link href="/" className="flex items-center">
+          <img src="/myskinLogo.png" alt="MySkin" className="h-8 md:h-10 w-auto" />
         </Link>
       </div>
 

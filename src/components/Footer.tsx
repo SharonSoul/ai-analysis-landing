@@ -38,8 +38,8 @@ export const Footer = () => {
     <footer className="pt-24 pb-12 px-6 md:px-8 max-w-7xl mx-auto border-t border-myskin-slate/10 space-y-16">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
         <div className="col-span-2 space-y-6 md:space-y-8">
-          <div className="text-xl md:text-2xl font-bold tracking-tight text-myskin-slate">
-            MySkin<span className="font-light">AI</span>
+          <div>
+            <img src="/myskinLogo.png" alt="MySkin" className="h-8 md:h-10 w-auto" />
           </div>
           <p className="text-myskin-slate/50 text-sm max-w-xs leading-relaxed">
             Expert-level skin intelligence, optimized for your life on the move.
@@ -62,7 +62,7 @@ export const Footer = () => {
             ))}
           </div>
           <p className="text-[10px] font-black text-myskin-slate/30 uppercase tracking-[0.2em] mt-4">
-            Follow @MySkinApp for science-backed tips.
+            Follow @MYSKIN.SOCIAL for science-backed tips.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export const Footer = () => {
       <div className="pt-12 border-t border-myskin-slate/5 space-y-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           <div className="text-myskin-slate/40 text-[10px] font-bold space-y-3 uppercase tracking-widest leading-loose">
-            <p>© 2026 MySkin Technologies Inc.</p>
+            <p>© 2026 MySkin Social Inc.</p>
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               <a href="#" className="hover:text-myskin-slate transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-myskin-slate transition-colors">Terms of Service</a>

@@ -49,7 +49,7 @@ const MobileAppSection = () => {
           
           <div className="flex items-center gap-4 pt-4 border-t border-white/5">
             <p className="text-white/30 text-[10px] font-black uppercase tracking-[0.3em] italic">
-              Current Version: v4.2 | Trusted by 50,000+ Skin Conscious Users
+              We&apos;re currently accepting test users. Join the waitlist to get early access.
             </p>
           </div>
         </div>

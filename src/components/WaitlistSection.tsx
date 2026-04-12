@@ -32,15 +32,15 @@ const WaitlistSection = () => {
               transition={{ duration: 0.8 }}
               className="inline-block px-5 py-2 rounded-full bg-myskin-bg border border-myskin-slate/5 text-[10px] font-black uppercase tracking-[0.4em] text-myskin-slate/40"
             >
-              Early Access Phase
+              Early Access
             </motion.div>
 
             <div className="space-y-6">
               <h2 className="text-4xl md:text-7xl font-extrabold text-myskin-slate leading-[1.1] tracking-tight">
-                The Future of Skincare is Personal. <br className="hidden md:block" />Be the First to Enter.
+                Your skin. Your ritual. <br className="hidden md:block" />Your data.
               </h2>
               <p className="text-myskin-slate/50 text-lg md:text-2xl leading-relaxed font-medium">
-                We are building a more intelligent, transparent, and effective world for skincare. We&apos;re currently in a limited-release phase. Join the MySkin VIP Waitlist to secure your spot for early access.
+                Your skin has been waiting for this. Join the waitlist to request early access.
               </p>
             </div>
 

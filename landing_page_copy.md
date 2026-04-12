@@ -65,7 +65,7 @@ Take the power of MySkin with you wherever you go. Our mobile application is des
 *   **[Phone Model Illustration Placeholder]**
 *   **Get it on Google Play Store**
 *   **Download on the App Store**
-*   *Current Version: v4.2 | Trusted by 50,000+ Skin Conscious Users*
+*   *We're currently accepting test users. Join the waitlist to get early access.*
 
 ---
 
@@ -94,10 +94,10 @@ Beauty isn't an overnight fix—it's a journey. MySkin breaks down your skin dat
 **Focus:** Collecting emails for early access.
 
 ### Headline
-#### The Future of Skincare is Personal. Be the First to Enter.
+#### Your skin. Your ritual. Your data.
 
 ### Body Text
-We are building a more intelligent, transparent, and effective world for skincare. We’re currently in a limited-release phase to ensure every user receives the highest quality AI analysis. Join the **MySkin VIP Waitlist** to secure your spot for early access, exclusive product audits, and the first look at our upcoming Expert Connect feature.
+Your skin has been waiting for this. Join the waitlist to request early access.
 
 ### Input/CTA
 *   **[Email Input Field: "Enter your email address"]**
@@ -115,10 +115,10 @@ We are building a more intelligent, transparent, and effective world for skincar
 *   **Company:** About Us, Careers, Contact, Press Kit.
 
 ### Legal (Small Print)
-*   © 2026 MySkin Technologies Inc. All Rights Reserved.
+*   © 2026 MySkin Social Inc. All Rights Reserved.
 *   Privacy Policy | Terms of Service | Cookie Settings
 *   *Disclaimer: MySkin is an AI-powered advisory tool and does not replace professional medical diagnosis.*
 
 ### Social Connect
 *   [Icons: Instagram, TikTok, LinkedIn, YouTube]
-*   **Follow @MySkinApp for daily science-backed skin tips.**
+*   **Follow @MYSKIN.SOCIAL for daily science-backed skin tips.**
