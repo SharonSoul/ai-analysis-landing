@@ -56,15 +56,31 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-black/60 md:bg-white/5 z-10" />
       </div>
 
-      {/* Floating Purity Elements - Subtly added for 'Pristine' feel */}
+      {/* Floating Purity Elements - Now functional AI Data Nodes */}
       <motion.div 
         style={{ x: sphereX, y: sphereY }}
-        className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-white/5 backdrop-blur-2xl border border-white/20 shadow-2xl z-10 hidden md:block" 
-      />
+        className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-white/5 backdrop-blur-2xl border border-white/20 shadow-2xl z-10 hidden md:flex items-center justify-center overflow-hidden group" 
+      >
+        <div className="flex flex-col items-center">
+          <motion.div 
+            animate={{ opacity: [0.3, 0.7, 0.3] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-2 h-2 rounded-full bg-myskin-slate mb-2"
+          />
+          <span className="text-[10px] font-black tracking-widest text-myskin-slate/60 uppercase">AI SCAN</span>
+          <span className="text-[8px] font-bold text-myskin-slate/40 uppercase">Active</span>
+        </div>
+      </motion.div>
+
       <motion.div 
         style={{ x: useTransform(sphereX, (v) => (typeof v === 'number' ? -v * 1.5 : 0)), y: useTransform(sphereY, (v) => (typeof v === 'number' ? -v * 1.5 : 0)) }}
-        className="absolute bottom-1/4 right-1/3 w-24 h-24 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl z-10 hidden md:block" 
-      />
+        className="absolute bottom-1/4 right-1/3 w-28 h-28 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl z-10 hidden md:flex items-center justify-center" 
+      >
+        <div className="flex flex-col items-center text-center px-4">
+          <span className="text-sm font-black text-myskin-slate/60">99.8%</span>
+          <span className="text-[7px] font-bold text-myskin-slate/40 uppercase tracking-tighter">Precision Score</span>
+        </div>
+      </motion.div>
 
       {/* Content Layer - Centered with high contrast on mobile */}
       <div className="relative z-20 w-full px-6 md:px-24 lg:px-40 pt-20 md:pt-0">
