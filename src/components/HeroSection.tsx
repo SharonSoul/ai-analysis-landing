@@ -2,7 +2,7 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useSpring, useTransform } from 'framer-motion';
-import { ChevronRight, ShieldCheck, Zap, Calendar } from 'lucide-react';
+import { ShieldCheck, Zap, Calendar } from 'lucide-react';
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0.5, y: 0.5 });
@@ -52,8 +52,8 @@ const HeroSection = () => {
         >
           <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
-        {/* Subtle light overlay instead of dark */}
-        <div className="absolute inset-0 bg-white/5 z-10" />
+        {/* Darker overlay on mobile for text readability, subtle on desktop */}
+        <div className="absolute inset-0 bg-myskin-slate/40 md:bg-white/5 z-10" />
       </div>
 
       {/* Floating Purity Elements - Subtly added for 'Pristine' feel */}
@@ -66,20 +66,20 @@ const HeroSection = () => {
         className="absolute bottom-1/4 right-1/3 w-24 h-24 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl z-10 hidden md:block" 
       />
 
-      {/* Content Layer - Maximized edge padding to clear center model */}
-      <div className="relative z-20 w-full px-12 md:px-24 lg:px-40">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-32">
+      {/* Content Layer - Centered with high contrast on mobile */}
+      <div className="relative z-20 w-full px-6 md:px-24 lg:px-40 pt-20 md:pt-0">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-32">
           
           {/* Left Side: Editorial Heading & CTA */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-xl">
-            <div className="space-y-12">
+            <div className="space-y-8 md:space-y-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/20 w-fit shadow-lg shadow-black/5 mx-auto md:mx-0"
+                className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/10 w-fit shadow-lg shadow-black/5 mx-auto md:mx-0"
               >
-                <p className="text-[10px] font-black text-myskin-slate tracking-[0.2em] uppercase">
+                <p className="text-[10px] font-black text-white md:text-myskin-slate tracking-[0.2em] uppercase">
                   Pristine AI Analysis
                 </p>
               </motion.div>
@@ -88,10 +88,10 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.5, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="text-3xl md:text-5xl lg:text-6xl font-bold text-myskin-slate leading-[1.2] tracking-tighter"
+                className="text-4xl md:text-5xl lg:text-6xl font-black text-white md:text-myskin-slate leading-[1.1] tracking-tighter"
               >
                 Unlock <br />
-                <span className="font-light italic text-myskin-slate/50">your skin's</span> <br />
+                <span className="font-light italic text-white/60 md:text-myskin-slate/50 leading-none">your skin's</span> <br />
                 potential
               </motion.h1>
               
@@ -99,26 +99,15 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.5, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="text-base text-myskin-slate/70 leading-relaxed font-medium max-w-xs mx-auto md:mx-0"
+                className="text-base md:text-lg text-white/80 md:text-myskin-slate/70 leading-relaxed font-medium max-w-xs mx-auto md:mx-0"
               >
                 Clinical-grade scanning technology to reveal what's beneath the surface.
               </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 1, delay: 1.0, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <button className="px-12 py-5 bg-myskin-slate text-white rounded-[20px] font-bold shadow-2xl shadow-myskin-slate/30 hover:scale-[1.03] active:scale-[0.97] transition-all flex items-center gap-4 text-lg">
-                  Analyze Skin 
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </motion.div>
             </div>
           </div>
 
           {/* Right Side: Sophisticated Stats */}
-          <div className="flex flex-col gap-8 md:gap-14 w-full md:w-auto">
+          <div className="flex flex-col gap-6 md:gap-14 w-full md:w-auto pb-12 md:pb-0">
             {[
               { icon: <ShieldCheck />, val: "95%", lab: "accurate skin analysis" },
               { icon: <Zap />, val: "30+", lab: "skin concerns analyzed" },
@@ -126,7 +115,7 @@ const HeroSection = () => {
             ].map((stat, idx) => (
               <motion.div 
                 key={idx}
-                className="flex items-center gap-4 md:gap-6"
+                className="flex items-center gap-4 md:gap-6 justify-center md:justify-start"
                 initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ 
@@ -135,12 +124,12 @@ const HeroSection = () => {
                   ease: [0.22, 1, 0.36, 1] 
                 }}
               >
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl glass flex items-center justify-center text-myskin-slate shadow-xl md:shadow-2xl flex-shrink-0">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl glass flex items-center justify-center text-white md:text-myskin-slate shadow-xl md:shadow-2xl flex-shrink-0">
                   {React.cloneElement(stat.icon as React.ReactElement<any>, { className: "w-5 h-5 md:w-6 md:h-6" })}
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-3xl md:text-5xl font-black text-myskin-slate leading-none tracking-tighter">{stat.val}</span>
-                  <p className="text-[9px] md:text-[10px] font-bold text-myskin-slate/40 uppercase tracking-widest mt-1 md:mt-2">{stat.lab}</p>
+                <div className="flex flex-col text-left">
+                  <span className="text-3xl md:text-5xl font-black text-white md:text-myskin-slate leading-none tracking-tighter">{stat.val}</span>
+                  <p className="text-[9px] md:text-[10px] font-bold text-white/50 md:text-myskin-slate/40 uppercase tracking-widest mt-1 md:mt-2">{stat.lab}</p>
                 </div>
               </motion.div>
             ))}

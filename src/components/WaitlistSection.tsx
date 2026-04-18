@@ -23,40 +23,40 @@ const WaitlistSection = () => {
       {/* Atmospheric Background Element */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-myskin-bg/30 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full relative z-10">
-        <div className="glass rounded-[40px] md:rounded-[80px] p-10 md:p-24 relative shadow-2xl shadow-black/5 overflow-hidden border border-white/60">
-          <div className="max-w-3xl mx-auto text-center space-y-10 md:space-y-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 w-full relative z-10">
+        <div className="glass rounded-[40px] md:rounded-[80px] p-8 md:p-24 relative shadow-2xl shadow-black/5 overflow-hidden border border-white/60">
+          <div className="max-w-3xl mx-auto text-center space-y-8 md:space-y-12 relative z-10">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="inline-block px-5 py-2 rounded-full bg-myskin-bg border border-myskin-slate/5 text-[10px] font-black uppercase tracking-[0.4em] text-myskin-slate/40"
+              className="inline-block px-5 py-2 rounded-full bg-myskin-bg border border-myskin-slate/5 text-[9px] md:text-[10px] font-black uppercase tracking-[0.4em] text-myskin-slate/40"
             >
               Early Access
             </motion.div>
 
-            <div className="space-y-6">
-              <h2 className="text-4xl md:text-7xl font-extrabold text-myskin-slate leading-[1.1] tracking-tight">
-                Your skin. Your ritual. <br className="hidden md:block" />Your data.
+            <div className="space-y-4 md:space-y-6">
+              <h2 className="text-3xl md:text-7xl font-extrabold text-myskin-slate leading-[1.1] tracking-tight">
+                Your skin. Your data. <br className="hidden md:block" />Real results.
               </h2>
-              <p className="text-myskin-slate/50 text-lg md:text-2xl leading-relaxed font-medium">
+              <p className="text-myskin-slate/50 text-base md:text-2xl leading-relaxed font-medium">
                 Your skin has been waiting for this. Join the waitlist to request early access.
               </p>
             </div>
 
             {!submitted ? (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 mt-12 max-w-lg mx-auto">
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-12 max-w-lg mx-auto">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
                   required
-                  className="flex-1 px-8 py-5 rounded-2xl bg-myskin-bg border border-myskin-slate/10 text-myskin-slate placeholder:text-myskin-slate/30 focus:outline-none focus:ring-2 focus:ring-myskin-slate/20 transition-all text-lg"
+                  className="flex-1 px-6 md:px-8 py-4 md:py-5 rounded-2xl bg-myskin-bg border border-myskin-slate/10 text-myskin-slate placeholder:text-myskin-slate/30 focus:outline-none focus:ring-2 focus:ring-myskin-slate/20 transition-all text-base md:text-lg"
                 />
                 <button
                   type="submit"
-                  className="px-10 py-5 rounded-2xl bg-myskin-slate text-white font-bold shadow-xl shadow-myskin-slate/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 text-lg"
+                  className="px-8 md:px-10 py-4 md:py-5 rounded-2xl bg-myskin-slate text-white font-bold shadow-xl shadow-myskin-slate/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 text-base md:text-lg"
                 >
                   Join the Waitlist
                   <Send className="w-5 h-5" />

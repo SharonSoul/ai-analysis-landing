@@ -51,7 +51,7 @@ const AIDemoSection = () => {
         </div>
 
         {/* Right Side: Interactive Scan Demo */}
-        <div className="md:w-1/2 relative bg-myskin-bg rounded-3xl overflow-hidden p-8 shadow-2xl shadow-black/5 aspect-square flex items-center justify-center">
+        <div className="w-full md:w-1/2 relative bg-myskin-bg rounded-3xl overflow-hidden p-4 md:p-8 shadow-2xl shadow-black/5 aspect-square flex items-center justify-center">
           <div className="relative w-full h-full rounded-2xl overflow-hidden group">
             {/* Base Image */}
             <img 
@@ -82,12 +82,12 @@ const AIDemoSection = () => {
                   style={{ top: label.top, left: label.left }}
                 >
                   <div className="flex flex-col gap-1 items-start">
-                    <div className="w-4 h-4 rounded-full bg-white border-2 border-myskin-slate animate-pulse" />
-                    <div className="glass px-4 py-2 rounded-xl flex flex-col -ml-2 mt-1 min-w-[140px]">
-                      <span className="text-[10px] font-bold uppercase tracking-tighter text-myskin-slate/50">
+                    <div className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-white border-2 border-myskin-slate animate-pulse" />
+                    <div className="glass px-2 md:px-4 py-1 md:py-2 rounded-lg md:rounded-xl flex flex-col -ml-1 md:-ml-2 mt-1 min-w-[100px] md:min-w-[140px]">
+                      <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-tighter text-myskin-slate/50">
                         {label.title}
                       </span>
-                      <span className="text-sm font-bold text-myskin-slate">
+                      <span className="text-xs md:text-sm font-bold text-myskin-slate">
                         {label.value}
                       </span>
                     </div>

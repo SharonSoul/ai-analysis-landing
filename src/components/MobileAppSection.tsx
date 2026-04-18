@@ -6,7 +6,7 @@ import { Apple, Play } from 'lucide-react';
 
 const MobileAppSection = () => {
   return (
-    <section className="min-h-[90vh] py-32 bg-myskin-slate text-white rounded-[80px] mx-8 mb-12 overflow-hidden relative flex items-center">
+    <section className="min-h-[80vh] py-20 md:py-32 bg-myskin-slate text-white rounded-[40px] md:rounded-[80px] mx-4 md:mx-8 mb-12 overflow-hidden relative flex items-center">
       {/* Immersive Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,_rgba(255,255,255,0.08)_0%,transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:60px_60px] opacity-20" />
@@ -22,29 +22,35 @@ const MobileAppSection = () => {
             <div className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-[10px] font-black uppercase tracking-[0.3em] text-white/60">
               Pristine Mobile Experience
             </div>
-            <h2 className="text-4xl md:text-7xl font-extrabold leading-[1.05] tracking-tight">
-              Your skin speaks, we listen.
-            </h2>
+            <div className="flex flex-col gap-4 items-center md:items-start">
+              <div className="flex items-center gap-3">
+                <div className="h-[1px] w-8 bg-white/20" />
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40">Coming Soon</span>
+              </div>
+              <h2 className="text-4xl md:text-7xl font-extrabold leading-[1.05] tracking-tight">
+                Your skin speaks, we listen.
+              </h2>
+            </div>
             <p className="text-white/60 text-lg md:text-2xl leading-relaxed font-light max-w-xl mx-auto md:mx-0">
               Take the power of MySkin with you wherever you go. Our mobile application is designed for seamless daily interaction, providing real-time skin alerts, routine reminders, and instant scan results. Expert-level skin intelligence, optimized for your life on the move.
             </p>
           </motion.div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 md:gap-6">
-            <button className="w-full sm:w-auto group flex items-center justify-center gap-4 bg-white text-myskin-slate px-8 md:px-10 py-5 md:py-6 rounded-2xl md:rounded-3xl font-black shadow-2xl hover:scale-105 transition-all active:scale-95">
+            <div className="w-full sm:w-auto flex items-center justify-center gap-4 bg-white/90 text-myskin-slate px-8 md:px-10 py-5 md:py-6 rounded-2xl md:rounded-3xl font-black shadow-2xl opacity-80 cursor-default">
               <Apple className="w-6 h-6 md:w-8 md:h-8" />
               <div className="text-left">
-                <p className="text-[10px] uppercase tracking-[0.2em] font-black leading-none opacity-50">Download on the</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] font-black leading-none opacity-50">Coming Soon</p>
                 <p className="text-lg md:text-xl leading-none mt-1">App Store</p>
               </div>
-            </button>
-            <button className="w-full sm:w-auto group flex items-center justify-center gap-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white px-8 md:px-10 py-5 md:py-6 rounded-2xl md:rounded-3xl font-black hover:bg-white/20 transition-all active:scale-95 shadow-xl">
-              <Play className="w-6 h-6 md:w-8 md:h-8 fill-current" />
+            </div>
+            <div className="w-full sm:w-auto flex items-center justify-center gap-4 bg-white/5 backdrop-blur-xl border border-white/10 text-white/50 px-8 md:px-10 py-5 md:py-6 rounded-2xl md:rounded-3xl font-black cursor-default">
+              <Play className="w-6 h-6 md:w-8 md:h-8 fill-current opacity-50" />
               <div className="text-left">
-                <p className="text-[10px] uppercase tracking-[0.2em] font-black leading-none opacity-50">Get it on</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] font-black leading-none opacity-40">Coming Soon</p>
                 <p className="text-lg md:text-xl leading-none mt-1">Google Play</p>
               </div>
-            </button>
+            </div>
           </div>
           
           <div className="flex items-center gap-4 pt-4 border-t border-white/5">
@@ -54,10 +60,10 @@ const MobileAppSection = () => {
           </div>
         </div>
 
-        <div className="md:w-1/2 relative flex justify-center">
+        <div className="md:w-1/2 relative flex justify-center w-full">
           {/* Phone Model Visualization Placeholder Styling */}
-          <div className="relative w-72 h-[600px] bg-[#1a1a1a] rounded-[3rem] border-[8px] border-white/10 shadow-2xl overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-white/10 rounded-b-3xl z-20" />
+          <div className="relative w-64 md:w-72 h-[500px] md:h-[600px] bg-[#1a1a1a] rounded-[2.5rem] md:rounded-[3rem] border-[6px] md:border-[8px] border-white/10 shadow-2xl overflow-hidden scale-90 md:scale-100">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 md:w-32 h-5 md:h-6 bg-white/10 rounded-b-3xl z-20" />
             <img
               src="/myskin-mod.png"
               alt="MySkin App Interface"
@@ -65,7 +71,7 @@ const MobileAppSection = () => {
             />
           </div>
           {/* Aura background for phone */}
-          <div className="absolute inset-0 bg-white/5 blur-[100px] rounded-full -z-10" />
+          <div className="absolute inset-0 bg-white/5 blur-[80px] md:blur-[100px] rounded-full -z-10" />
         </div>
       </div>
     </section>
