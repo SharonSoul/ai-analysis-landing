@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "MySkin AI | Clinical Skin Analysis",
-  description: "Hyper-modern, light-themed AI Skin Analysis landing page.",
+  description: "MySkinAI Skin Analysis Landing Page.",
 };
 
 export default function RootLayout({
