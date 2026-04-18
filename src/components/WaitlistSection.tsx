@@ -3,17 +3,36 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, CheckCircle2 } from 'lucide-react';
+import { Send, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
 
 const WaitlistSection = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (!email) return;
+
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const { error: supabaseError } = await supabase
+        .from('waitlist') // Change this to your existing table name if different
+        .insert([{ email }]); // Change 'email' to your column name if different
+
+      if (supabaseError) throw supabaseError;
+
       setSubmitted(true);
       setEmail('');
+    } catch (err: any) {
+      console.error('Waitlist submission error:', err);
+      setError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -45,23 +64,47 @@ const WaitlistSection = () => {
             </div>
 
             {!submitted ? (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-12 max-w-lg mx-auto">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email address"
-                  required
-                  className="flex-1 px-6 md:px-8 py-4 md:py-5 rounded-2xl bg-myskin-bg border border-myskin-slate/10 text-myskin-slate placeholder:text-myskin-slate/30 focus:outline-none focus:ring-2 focus:ring-myskin-slate/20 transition-all text-base md:text-lg"
-                />
-                <button
-                  type="submit"
-                  className="px-8 md:px-10 py-4 md:py-5 rounded-2xl bg-myskin-slate text-white font-bold shadow-xl shadow-myskin-slate/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 text-base md:text-lg"
-                >
-                  Join the Waitlist
-                  <Send className="w-5 h-5" />
-                </button>
-              </form>
+              <div className="max-w-lg mx-auto w-full space-y-4">
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-12">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email address"
+                    required
+                    disabled={isSubmitting}
+                    className="flex-1 px-6 md:px-8 py-4 md:py-5 rounded-2xl bg-myskin-bg border border-myskin-slate/10 text-myskin-slate placeholder:text-myskin-slate/30 focus:outline-none focus:ring-2 focus:ring-myskin-slate/20 transition-all text-base md:text-lg disabled:opacity-50"
+                  />
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="px-8 md:px-10 py-4 md:py-5 rounded-2xl bg-myskin-slate text-white font-bold shadow-xl shadow-myskin-slate/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 text-base md:text-lg disabled:opacity-70 disabled:hover:scale-100"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        Processing...
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                      </>
+                    ) : (
+                      <>
+                        Join the Waitlist
+                        <Send className="w-5 h-5" />
+                      </>
+                    )}
+                  </button>
+                </form>
+                
+                {error && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center justify-center gap-2 text-red-500 text-sm font-medium"
+                  >
+                    <AlertCircle className="w-4 h-4" />
+                    {error}
+                  </motion.div>
+                )}
+              </div>
             ) : (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}

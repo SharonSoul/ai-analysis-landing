@@ -52,8 +52,8 @@ const HeroSection = () => {
         >
           <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
-        {/* Darker overlay on mobile for text readability, subtle on desktop */}
-        <div className="absolute inset-0 bg-myskin-slate/40 md:bg-white/5 z-10" />
+        {/* Much darker overlay on mobile for maximum text readability, subtle on desktop */}
+        <div className="absolute inset-0 bg-black/60 md:bg-white/5 z-10" />
       </div>
 
       {/* Floating Purity Elements - Subtly added for 'Pristine' feel */}
