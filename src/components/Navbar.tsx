@@ -32,9 +32,12 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center gap-4">
-        <button className="hidden sm:block px-6 py-2.5 rounded-xl bg-white/20 border border-white/30 text-[10px] font-black uppercase tracking-widest text-myskin-slate hover:bg-white/40 transition-all backdrop-blur-md shadow-sm">
+        <a 
+          href="mailto:toluwani@myskin.social"
+          className="hidden sm:block px-6 py-2.5 rounded-xl bg-white/20 border border-white/30 text-[10px] font-black uppercase tracking-widest text-myskin-slate hover:bg-white/40 transition-all backdrop-blur-md shadow-sm"
+        >
           Contact
-        </button>
+        </a>
         <button 
           onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
           className="px-6 py-2.5 rounded-xl bg-myskin-slate text-white text-[10px] font-black uppercase tracking-widest shadow-2xl shadow-myskin-slate/20 hover:scale-105 active:scale-95 transition-all"

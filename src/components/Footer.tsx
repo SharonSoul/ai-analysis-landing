@@ -60,7 +60,10 @@ export const Footer = () => {
             <ul className="space-y-4">
               {links.map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-sm font-medium text-myskin-slate/50 hover:text-myskin-slate transition-colors">
+                  <a 
+                    href={link === 'Contact' ? 'mailto:toluwani@myskin.social' : '#'} 
+                    className="text-sm font-medium text-myskin-slate/50 hover:text-myskin-slate transition-colors"
+                  >
                     {link}
                   </a>
                 </li>
