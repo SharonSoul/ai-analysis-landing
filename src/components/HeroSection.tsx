@@ -39,10 +39,10 @@ const HeroSection = () => {
     <section ref={containerRef} className="relative h-screen w-screen overflow-hidden flex items-center bg-white">
       {/* Immersive Video Background - Full Width/Height */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-white">
-        <video 
+        <video
           ref={videoRef}
-          muted 
-          loop 
+          muted
+          loop
           playsInline
           preload="auto"
           controlsList="nodownload"
@@ -57,12 +57,12 @@ const HeroSection = () => {
       </div>
 
       {/* Floating Purity Elements - Now functional AI Data Nodes */}
-      <motion.div 
+      <motion.div
         style={{ x: sphereX, y: sphereY }}
-        className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-white/5 backdrop-blur-2xl border border-white/20 shadow-2xl z-10 hidden md:flex items-center justify-center overflow-hidden group" 
+        className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-white/5 backdrop-blur-2xl border border-white/20 shadow-2xl z-10 hidden md:flex items-center justify-center overflow-hidden group"
       >
         <div className="flex flex-col items-center">
-          <motion.div 
+          <motion.div
             animate={{ opacity: [0.3, 0.7, 0.3] }}
             transition={{ duration: 2, repeat: Infinity }}
             className="w-2 h-2 rounded-full bg-myskin-slate mb-2"
@@ -72,12 +72,12 @@ const HeroSection = () => {
         </div>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         style={{ x: useTransform(sphereX, (v) => (typeof v === 'number' ? -v * 1.5 : 0)), y: useTransform(sphereY, (v) => (typeof v === 'number' ? -v * 1.5 : 0)) }}
-        className="absolute bottom-1/4 right-1/3 w-28 h-28 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl z-10 hidden md:flex items-center justify-center" 
+        className="absolute bottom-1/4 right-1/3 w-28 h-28 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl z-10 hidden md:flex items-center justify-center"
       >
         <div className="flex flex-col items-center text-center px-4">
-          <span className="text-sm font-black text-myskin-slate/60">99.8%</span>
+          <span className="text-sm font-black text-myskin-slate/60">95.8%</span>
           <span className="text-[7px] font-bold text-myskin-slate/40 uppercase tracking-tighter">Precision Score</span>
         </div>
       </motion.div>
@@ -85,7 +85,7 @@ const HeroSection = () => {
       {/* Content Layer - Centered with high contrast on mobile */}
       <div className="relative z-20 w-full px-6 md:px-24 lg:px-40 pt-20 md:pt-0">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-32">
-          
+
           {/* Left Side: Editorial Heading & CTA */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-xl">
             <div className="space-y-8 md:space-y-12">
@@ -99,8 +99,8 @@ const HeroSection = () => {
                   Pristine AI Analysis
                 </p>
               </motion.div>
-              
-              <motion.h1 
+
+              <motion.h1
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.5, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -110,8 +110,8 @@ const HeroSection = () => {
                 <span className="font-light italic text-white/60 md:text-myskin-slate/50 leading-none">your skin's</span> <br />
                 potential
               </motion.h1>
-              
-              <motion.p 
+
+              <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.5, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -129,15 +129,15 @@ const HeroSection = () => {
               { icon: <Zap />, val: "30+", lab: "skin concerns analyzed" },
               { icon: <Calendar />, val: "7-day", lab: "personalized routine" },
             ].map((stat, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 className="flex items-center gap-4 md:gap-6 justify-center md:justify-start"
                 initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ 
+                transition={{
                   delay: 1.3 + idx * 0.4,
                   duration: 1.8,
-                  ease: [0.22, 1, 0.36, 1] 
+                  ease: [0.22, 1, 0.36, 1]
                 }}
               >
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl glass flex items-center justify-center text-white md:text-myskin-slate shadow-xl md:shadow-2xl flex-shrink-0">
