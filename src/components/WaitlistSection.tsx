@@ -30,7 +30,11 @@ const WaitlistSection = () => {
       setEmail('');
     } catch (err: any) {
       console.error('Waitlist submission error:', err);
-      setError(err.message || 'Something went wrong. Please try again.');
+      if (err.code === '23505' || err.message?.includes('duplicate key') || err.message?.includes('unique constraint')) {
+        setError('You are already on the waitlist! Thank you for your support.');
+      } else {
+        setError(err.message || 'Something went wrong. Please try again.');
+      }
     } finally {
       setIsSubmitting(false);
     }
