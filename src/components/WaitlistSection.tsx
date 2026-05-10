@@ -82,7 +82,7 @@ const WaitlistSection = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="px-8 md:px-10 py-4 md:py-5 rounded-2xl bg-myskin-slate text-white font-bold shadow-xl shadow-myskin-slate/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 text-base md:text-lg disabled:opacity-70 disabled:hover:scale-100"
+                    className="px-8 md:px-10 py-4 md:py-5 rounded-2xl bg-myskin-slate text-white font-bold shadow-xl shadow-myskin-slate/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 text-base md:text-lg disabled:opacity-70 disabled:hover:scale-100 whitespace-nowrap"
                   >
                     {isSubmitting ? (
                       <>

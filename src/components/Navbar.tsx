@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
+
 const Navbar = () => {
   const [scrolled, setScrolled] = React.useState(false);
 
@@ -38,6 +39,7 @@ const Navbar = () => {
         >
           Contact
         </a>
+
         <button
           onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
           className="px-6 py-2.5 rounded-xl bg-myskin-slate text-white text-[10px] font-black uppercase tracking-widest shadow-2xl shadow-myskin-slate/20 hover:scale-105 active:scale-95 transition-all"

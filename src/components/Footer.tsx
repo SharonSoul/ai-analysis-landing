@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const InstagramIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -19,7 +20,7 @@ export const Footer = () => {
   const footerLinks = {
     Product: ['Features', 'AI Analysis', 'Skin Advisor', 'Scientific Basis'],
     Resources: ['Skin Education', 'Community Stories', 'FAQ', 'Support'],
-    Company: ['About Us', 'Careers', 'Contact', 'Press Kit'],
+    Company: ['About Us', 'Careers', 'Contact', 'Privacy Policy', 'Press Kit'],
   };
 
   return (
@@ -60,12 +61,21 @@ export const Footer = () => {
             <ul className="space-y-4">
               {links.map((link) => (
                 <li key={link}>
-                  <a 
-                    href={link === 'Contact' ? 'mailto:toluwani@myskin.social' : '#'} 
-                    className="text-sm font-medium text-myskin-slate/50 hover:text-myskin-slate transition-colors"
-                  >
-                    {link}
-                  </a>
+                  {link === 'Privacy Policy' ? (
+                    <Link 
+                      href="/privacy" 
+                      className="text-sm font-medium text-myskin-slate/50 hover:text-myskin-slate transition-colors"
+                    >
+                      {link}
+                    </Link>
+                  ) : (
+                    <a 
+                      href={link === 'Contact' ? 'mailto:toluwani@myskin.social' : '#'} 
+                      className="text-sm font-medium text-myskin-slate/50 hover:text-myskin-slate transition-colors"
+                    >
+                      {link}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -78,7 +88,7 @@ export const Footer = () => {
           <div className="text-myskin-slate/40 text-[10px] font-bold space-y-3 uppercase tracking-widest leading-loose">
             <p>© 2026 MySkin Social Inc.</p>
             <div className="flex flex-wrap gap-x-6 gap-y-2">
-              <a href="#" className="hover:text-myskin-slate transition-colors">Privacy Policy</a>
+              <Link href="/privacy" className="hover:text-myskin-slate transition-colors">Privacy Policy</Link>
               <a href="#" className="hover:text-myskin-slate transition-colors">Terms of Service</a>
               <a href="#" className="hover:text-myskin-slate transition-colors">Cookie Settings</a>
             </div>
