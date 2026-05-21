@@ -17,6 +17,7 @@ const HeroSection = () => {
         setMousePosition({ x, y });
       }
     };
+    
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
