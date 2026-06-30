@@ -34,10 +34,12 @@ const Navbar = () => {
 
       <div className="flex items-center gap-4">
         <a
-          href="mailto:toluwani@myskin.social"
+          href={process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/myskin-demo"}
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden sm:block px-6 py-2.5 rounded-xl bg-white/20 border border-white/30 text-[10px] font-black uppercase tracking-widest text-myskin-slate hover:bg-white/40 transition-all backdrop-blur-md shadow-sm"
         >
-          Contact
+          Book Consultation
         </a>
 
         <button

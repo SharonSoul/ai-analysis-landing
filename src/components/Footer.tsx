@@ -20,7 +20,7 @@ export const Footer = () => {
   const footerLinks = {
     Product: ['Features', 'AI Analysis', 'Skin Advisor', 'Scientific Basis'],
     Resources: ['Skin Education', 'Community Stories', 'FAQ', 'Support'],
-    Company: ['About Us', 'Careers', 'Contact', 'Privacy Policy', 'Press Kit'],
+    Company: ['About Us', 'Careers', 'Book Consultation', 'Contact', 'Privacy Policy', 'Press Kit'],
   };
 
   return (
@@ -70,7 +70,15 @@ export const Footer = () => {
                     </Link>
                   ) : (
                     <a 
-                      href={link === 'Contact' ? 'mailto:toluwani@myskin.social' : '#'} 
+                      href={
+                        link === 'Contact' 
+                          ? 'mailto:toluwani@myskin.social' 
+                          : link === 'Book Consultation'
+                          ? (process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/myskin-demo')
+                          : '#'
+                      } 
+                      target={link === 'Book Consultation' ? '_blank' : undefined}
+                      rel={link === 'Book Consultation' ? 'noopener noreferrer' : undefined}
                       className="text-sm font-medium text-myskin-slate/50 hover:text-myskin-slate transition-colors"
                     >
                       {link}

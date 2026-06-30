@@ -121,6 +121,28 @@ const HeroSection = () => {
               >
                 Clinical-grade scanning technology to reveal what's beneath the surface.
               </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.5, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                className="flex flex-col sm:flex-row gap-4 mt-6 justify-center md:justify-start w-full"
+              >
+                <button
+                  onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="px-8 py-3.5 rounded-xl bg-myskin-slate text-white text-xs font-black uppercase tracking-widest shadow-2xl shadow-myskin-slate/20 hover:scale-105 active:scale-95 transition-all text-center cursor-pointer"
+                >
+                  Join the Waitlist
+                </button>
+                <a
+                  href={process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/myskin-demo"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3.5 rounded-xl bg-white/20 border border-white/30 text-white md:bg-white/80 md:border-myskin-slate/10 md:text-myskin-slate text-xs font-black uppercase tracking-widest hover:bg-white/40 md:hover:bg-white hover:scale-105 active:scale-95 transition-all text-center backdrop-blur-md shadow-sm"
+                >
+                  Book Consultation
+                </a>
+              </motion.div>
             </div>
           </div>
 
