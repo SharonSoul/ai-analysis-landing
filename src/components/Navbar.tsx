@@ -26,6 +26,7 @@ const Navbar = () => {
         }`}
     >
 
+
       <div className="flex items-center gap-2">
         <Link href="/" className="flex items-center">
           <Image src="/myskinLogo.png" alt="MySkin" width={120} height={40} className="h-8 md:h-10 w-auto" priority />
